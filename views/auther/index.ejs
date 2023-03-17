@@ -1,0 +1,11 @@
+<h3>Search here</h3>
+
+<form action="/auther" method="GET">
+    <label for="search">Search</label>
+    <input type="text" name="search">
+    <button type="submit">Search</button>
+</form>
+<br>
+<% authers.forEach(auther => { %>
+    <h1><%= auther.name %></h1>
+<% }); %>
