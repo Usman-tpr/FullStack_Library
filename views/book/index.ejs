@@ -1,0 +1,11 @@
+<h3>Search here</h3>
+
+<form action="/book" method="GET">
+    <label for="title">Search</label>
+    <input type="text" name="title" value="<%- searchParam.title%>">
+    <button type="submit">Search</button>
+</form>
+<br>
+<% books.forEach(book => { %>
+   <img src="<%- book.coverImagePath %>" alt="" width="200px" height="200px">
+<% }); %>

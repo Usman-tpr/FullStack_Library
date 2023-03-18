@@ -6,7 +6,8 @@ const express=require('express');
 const app=express();
 const expresslayouts=require('express-ejs-layouts');
 const indexRouter=require('./routes/index');
-const autherRouter=require('./routes/auther')
+const autherRouter=require('./routes/auther');
+const bookRouter=require('./routes/books')
 const  bodyparser=require('body-parser')
 app.set('views', __dirname + '/views');
 app.set('view engine','ejs');
@@ -16,6 +17,7 @@ app.use(express.static('public'))
 app.use(bodyparser.urlencoded({limit:'10mb', extended:false}))
 app.use('/',indexRouter);
 app.use('/auther',autherRouter);
+app.use('/book',bookRouter)
 app.listen(process.env.PORT || 3000);
 
 const mongoose=require('mongoose');

@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <label for="title">title</label>
+    <input type="text" name="title" required>
+    </div>
+    
+    <div>
+        <label for="auther">Auther</label>
+    <select name="auther" id="">
+        <% authers.forEach(auther => { %>
+            <option value="<%- auther.id %>" label="<%- auther.name%>"></option>
+        <% }); %>
+    </select>
+    </div>
+    
+    <label for="p">Published DATE</label>
+    <input type="date" value="<%- book.publishedDate %>" name="publishDate">
+</div>
+<div>
+    <label for="pageCount">Page Count</label>
+    <input type="number" name="pageCount" min="1" value="<%- book.pageCount%>">
+</div>
+<div>
+    <label for="coverImagw">Cover Image</label>
+    <input type="file" name="cover" >
+</div>
+<div>
+    <label for="desc">Description</label>
+<textarea name="desc" id="" ><%- book.desc %></textarea>
+</div>
